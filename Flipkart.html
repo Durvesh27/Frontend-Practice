@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Navbar</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        #navbar {
+            width: 100%;
+            height: 55px;
+            display: flex;
+            background-color: #2874f0;
+
+        }
+
+        #first {
+            width: 60%;
+            display: flex;
+        }
+
+        #second {
+            width: 40%;
+        }
+
+        #logo {
+            margin-left: 180px;
+        }
+
+        #logo img {
+            width: 100px;
+            height: 50px;
+        }
+
+        #search {
+            display: flex;
+            margin-left: 20px;
+            margin-top: 12px;
+
+        }
+
+        #input-item input {
+            width: 560px;
+            height: 30px;
+            border-radius: 1px;
+            border: none;
+            outline: none;
+        }
+
+        #searchIcon {
+            margin-top: 10px;
+            margin-left: -23px;
+            margin-bottom: 11px;
+            color: #2874f0;
+            background-color: white;
+        }
+
+        #second {
+            display: flex;
+            /* justify-content: space-around; */
+        }
+
+        #login button {
+            height: 30px;
+            width: 120px;
+            margin-top: 13px;
+            color: #2874f0;
+            font-size: 15px;
+            border-radius: 1px;
+            border: none;
+            outline: none;
+
+        }
+
+        #seller {
+            color: white;
+            margin-top: 17px;
+            margin-left: 30px;
+            font-size: 17px;
+            font-weight: bolder;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #more {
+            color: white;
+            margin-top: 19px;
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: bolder;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #cart {
+            display: flex;
+            color: white;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
+        #cartName {
+            font-size: 15px;
+            font-weight: bolder;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+
+        <div id="first">
+            <div id="logo">
+                <img
+                    src="data:image/jpeg;base64,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">
+            </div>
+            <div id=search>
+                <div id="input-item">
+                    <input type="text" placeholder="Search Flipkart.in">
+                </div>
+
+                <div id="searchIcon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="second">
+            <div id="login">
+                <button>Login</button>
+            </div>
+            <div id="seller">Become a seller</div>
+
+            <div id="more">
+                <span>More</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <div id="cart">
+
+                <div id="cartIcon"><i class="fa-sharp fa-solid fa-cart-shopping fa-xl"></i></div>
+                <div id="cartName">Cart</div>
+
+            </div>
+
+        </div>
+</body>
+
+</html>

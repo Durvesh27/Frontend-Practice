@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #main {
+        width: 100%;
+        height: 600px;
+        border: 2px solid black;
+    }
+
+    #navbar {
+        width: 100%;
+        height: 100px;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+    }
+    #icon{
+        width:10%;
+        /* border:1px solid blue; */
+    }
+    #navi{
+        width:30%;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #search{
+        width:30%;
+        /* border:1px solid blue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .searchIcon{
+        margin-right: 10px;
+    }
+    #profile{
+        width:20%;
+        height: 100px;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        
+    }
+    #pp{
+        width:30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+    #pp i{
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+    #wishlist{
+        width:30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+    #wishlist i{
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+    input{
+        
+        border: none; 
+        outline: none;
+    }
+    #bag{
+        width:30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+    #bag i{
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+        <div id="navbar">
+            <div id="icon">Icon </div>
+            <div id="navi">
+                <div>Men</div>
+                <div>Women</div>
+                <div>Kids</div>
+                <div>Beauty</div>
+                <div>Studio</div>
+            </div>
+            <div id="search">
+                <div class="searchIcon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div>
+                    <input type="search" placeholder="Search here"/>
+                </div>
+            </div>
+            <div id="profile">
+                <div id="pp">
+                    <i class="fa-solid fa-user fa-2xl"></i>
+                <div style="margin-top: 10px;margin-left: 20px;">Profile</div>
+                </div>
+                <div id="wishlist">
+                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <div style="margin-top: 10px;margin-left: 20px;">Wishlist</div>
+                </div>
+                <div id="bag">
+                    <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+                    <div style="margin-top: 10px;margin-left: 30px;">Bag</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="body"></div>
+    </div>
+</body>
+
+</html>

@@ -12,6 +12,10 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
         #navbar {
             width: 100%;
             height: 90px;
@@ -28,11 +32,7 @@
 
         }
 
-        #secondary {
-            width: 100%;
-            height: 30px;
-            /* border:1px solid red; */
-        }
+        
 
         #logo {
             width: 10%;
@@ -80,7 +80,7 @@
             width: 8%;
 
             /* border: 1px solid red; */
-            height: auto;
+            height: 40px;
             display: flex;
             color: black;
             background-color: rgb(243, 231, 231);
@@ -106,7 +106,7 @@
         #searchIcon {
             width: 5%;
             /* border: 1px solid red; */
-            height: auto;
+            height: 28px;
             color: black;
             padding-left: 22px;
             padding-top: 12px;
@@ -156,6 +156,42 @@
             font-weight: bolder;
             margin-top: 8px;
             margin-left: 2px;
+        }
+        #secondary {
+            width: 100%;
+            height: 30px;
+            /* border:1px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #blocks{
+            width:73%;
+            height:100%;
+            /* border: 1px solid red; */
+            padding-top: 5px;
+            background-color: #232f3e;
+            color: white;
+            box-sizing: border-box;
+        }
+        #blocks span{
+            font-size: 14px;
+            font-family: inherit;
+           margin-left:12px ;
+        }
+        #blocks span:hover{
+          border:1px solid white;
+          padding: 5px;  
+          border-radius: 2px;
+        }
+        #rightimg{
+            width:27%;
+            height:100%;
+            /* border: 1px solid red; */
+
+        }
+        #rightimg img{
+        width:100%;
+        height:100%;
         }
     </style>
 </head>
@@ -227,7 +263,28 @@
 
         </div>
 
-        <div id="secondary"></div>
+        <div id="secondary">
+            <div id="blocks">
+                <span>
+                    <i class="fa-solid fa-bars"></i>
+                    <p style="display: inline;margin-left: 2px;">All</p>
+                </span>
+                <span>Amazon miniTV</span>
+                <span>Sell</span>
+                <span>Best sellers</span>
+                <span>Todays Deals</span>
+                <span>Mobile</span>
+                <span>Customer service</span>
+                <span>Electronics</span>
+                <span>New releases</span>
+                <span>Prime</span>
+                <span>Home & Kitchen</span>
+                <span>Amazon pay</span>
+            </div>
+            <div id="rightimg">
+                <img src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/DahaadLaunch/400x39-SWM_NP._CB590231469_.jpg" >
+            </div>
+        </div>
     </div>
 
 

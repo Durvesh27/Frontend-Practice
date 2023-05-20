@@ -9,86 +9,181 @@
     <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
     #main {
         width: 100%;
-        height: 600px;
+        height: 1200px;
         border: 2px solid black;
     }
 
     #navbar {
         width: 100%;
-        height: 100px;
-        /* border: 2px solid red; */
+        height: 80px;
+        border: 2px solid red;
         display: flex;
         justify-content: space-around;
     }
-    #icon{
-        width:10%;
+
+    #icon {
+        width: 10%;
         /* border:1px solid blue; */
     }
-    #navi{
-        width:30%;
+
+    #navi {
+        width: 30%;
         /* border:1px solid blue; */
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
-    #search{
-        width:30%;
+
+    #search {
+        width: 30%;
         /* border:1px solid blue; */
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .searchIcon{
+
+    .searchIcon {
         margin-right: 10px;
     }
-    #profile{
-        width:20%;
-        height: 100px;
+
+    #profile {
+        width: 20%;
+        height: 80px;
         /* border:1px solid blue; */
         display: flex;
         justify-content: space-between;
-        margin-top: 10px;
-        
+
+
     }
-    #pp{
-        width:30%;
+
+    #pp {
+        width: 30%;
         height: 80px;
         /* border:1px solid red; */
         margin-top: 10px;
     }
-    #pp i{
+
+    #pp i {
         margin-top: 20px;
         margin-left: 28px;
         margin-right: 20px;
     }
-    #wishlist{
-        width:30%;
+
+    #wishlist {
+        width: 30%;
         height: 80px;
         /* border:1px solid red; */
         margin-top: 10px;
     }
-    #wishlist i{
+
+    #wishlist i {
         margin-top: 20px;
         margin-left: 28px;
         margin-right: 20px;
     }
-    input{
-        
-        border: none; 
+
+    input {
+
+        border: none;
         outline: none;
     }
-    #bag{
-        width:30%;
+
+    #bag {
+        width: 30%;
         height: 80px;
         /* border:1px solid red; */
         margin-top: 10px;
     }
-    #bag i{
+
+    #bag i {
         margin-top: 20px;
         margin-left: 28px;
         margin-right: 20px;
+    }
+
+    /* body CSS */
+    #body {
+        width: 100%;
+        height: 800px;
+        border: 1px solid #edebef;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    #body>div:nth-child(1) {
+        width: 15%;
+        /* border: 1px solid red; */
+
+    }
+    #body>div:nth-child(1) h4 {
+        margin-bottom: 10px;
+
+    }
+
+    #body>div:nth-child(2) {
+        width: 80%;
+        border-left: 1px solid #edebef;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 25px;
+    padding-left: 15px;
+}
+    
+    #leftSection{
+        margin-top: 20px;
+    }
+   
+    #leftSection div:nth-child(1){
+        margin-bottom: 15px;
+        border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(2){
+        margin-bottom: 15px;
+        border-bottom: 1px solid #edebef;
+    }
+    #leftSection div h4{
+        margin-bottom: 10px;
+        margin-left: 9px;
+        font-size: 0.9rem;
+    }
+    #leftSection div input,label{
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    #rightSection> div{
+    width:18%;
+    height:370px;
+    box-sizing: border-box;
+    }
+    #rightSection> div img{
+    width:100%;
+    height:75%;
+    /* margin: 26px 12px; */
+    }
+    #rightSection> div> h4:nth-child(2){
+   margin-bottom: 2px;
+   margin-left: 10px;
+    }
+    #rightSection> div> h4:nth-child(4){
+   
+   margin-left: 10px;
+    }
+    #rightSection> div> p:nth-child(3){
+   margin-bottom: 5px;
+   margin-left: 10px;
+
+    }
+    #rightSection> div {
+   margin-bottom: 10px;
     }
 </style>
 
@@ -109,27 +204,145 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div>
-                    <input type="search" placeholder="Search here"/>
+                    <input type="search" placeholder="Search here" />
                 </div>
             </div>
             <div id="profile">
                 <div id="pp">
-                    <i class="fa-solid fa-user fa-2xl"></i>
-                <div style="margin-top: 10px;margin-left: 20px;">Profile</div>
+                    <i class="fa-solid fa-user fa-lg"></i>
+                    <div style="margin-top: 10px;margin-left: 20px;">Profile</div>
                 </div>
                 <div id="wishlist">
-                    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
                     <div style="margin-top: 10px;margin-left: 20px;">Wishlist</div>
                 </div>
                 <div id="bag">
-                    <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+                    <i class="fa-solid fa-bag-shopping fa-lg"></i>
                     <div style="margin-top: 10px;margin-left: 30px;">Bag</div>
                 </div>
             </div>
 
         </div>
 
-        <div class="body"></div>
+        <div id="body">
+            <div id="leftSection">
+
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <input type="checkbox" />
+                    <label>Tshirt</label><br />
+                    <input type="checkbox" />
+                    <label>Shirt</label><br />
+                    <input type="checkbox" />
+                    <label>Jeans</label><br />
+                    <input type="checkbox" />
+                    <label>Kurta</label><br />
+                    <input type="checkbox" />
+                    <label>Trousers</label><br />
+                    <input type="checkbox" />
+                    <label>Tshirt</label><br />
+                    <input type="checkbox" />
+                    <label>Kurtas</label>
+                </div>
+                <div>
+                    <h4>BRAND</h4>
+                    <input type="checkbox" />
+                    <label>Roadster</label><br />
+                    <input type="checkbox" />
+                    <label>Allen solly</label><br />
+                    <input type="checkbox" />
+                    <label>Nike</label><br />
+                    <input type="checkbox" />
+                    <label>Puma</label><br />
+                    <input type="checkbox" />
+                    <label>Adidas</label><br />
+                    <input type="checkbox" />
+                    <label>Benetton</label><br />
+                    <input type="checkbox" />
+                    <label>U.S Polo</label>
+                </div>
+                <div>
+                    <h4>COLOUR</h4>
+                    <input type="checkbox" />
+                    <label>Blue</label><br />
+                    <input type="checkbox" />
+                    <label>Red</label><br />
+                    <input type="checkbox" />
+                    <label>Orange</label><br />
+                    <input type="checkbox" />
+                    <label>Black</label><br />
+                    <input type="checkbox" />
+                    <label>Pink</label><br />
+                    <input type="checkbox" />
+                    <label>Yellow</label><br />
+                    <input type="checkbox" />
+                    <label>green</label>
+                </div>
+
+            </div>
+            <div id="rightSection">
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <h4>Rs.399</h4>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

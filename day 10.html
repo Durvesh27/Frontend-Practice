@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resposiveness</title>
+    <style>
+        #parent {
+            width: 100%;
+            border: 5px solid red;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #parent>div{
+            border: 5px solid blue;
+            width: 30%;
+            height: 95%;
+        }
+        #parent>div>div{
+            width:100%;
+            height:25%;
+            border:2px solid green;
+            text-align: center;
+        }
+        /* #parent >div:nth-child(1){
+            border:5px solid blue;
+            width:30%;
+        }
+        #parent >div:nth-child(1) >div:nth-child(3){
+            border:2px solid green;
+            width:100%;
+        } */
+        @media screen and (max-width:400px){
+            #parent{
+                border:5px solid green;
+                color:blue;
+                flex-direction: column;
+                height:300px;
+                
+            }
+            #parent>div{
+            border: 5px solid violet;
+            width: 80%;
+            height:30% ;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #parent>div>div{
+            width:30%;
+            height:100%;
+            border:2px solid green;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        #parent >div:nth-child(1){
+         border:5px solid yellow;
+         color: blue;
+        }
+        #parent >div:nth-child(2){
+         border:5px solid greenyellow;
+         color: rgb(62, 71, 50);
+        }
+        #parent >div:nth-child(3){
+         border:5px solid orange;
+         color: rgb(195, 63, 89);
+        }
+        #parent >div:nth-child(1)>div:nth-child(1){
+        background-color: cyan;
+        }
+        #parent >div:nth-child(1)>div:nth-child(2){
+        background-color: pink;
+        }
+        #parent >div:nth-child(1)>div:nth-child(3){
+        background-color: burlywood;
+        }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div>
+            <div>A-1</div>
+            <div>B</div>
+            <div>C</div>
+        </div>
+        <div>
+            <div>A-2</div>
+            <div>B</div>
+            <div>C</div>
+        </div>
+        <div>
+            <div>A-3</div>
+            <div>B</div>
+            <div>C</div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

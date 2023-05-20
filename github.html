@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+
+    <title>Github</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    #screen{
+        width:100%;
+        /* border:1px solid blue;  */
+    }
+    #screen > div:nth-child(1){
+        width:100%;
+        height:60px;
+        background-color: black;
+        color:white;
+        /* border:1px solid red; */
+        display: flex;
+        justify-content: space-between;
+    }
+    #screen > div:nth-child(2){
+        width:100%;
+        /* border:1px solid red; */
+    }
+    #screen > div:nth-child(1)>div:nth-child(1){
+        width:5%;
+       
+        /* border:1px solid red; */
+    }
+    #screen > div:nth-child(1)>div:nth-child(1) img{
+        width: 67%;
+    height: 82%;
+    margin-left: 28px;
+    margin-top: 5px;
+    /* border: 1px solid red; */
+}
+    
+    #screen > div:nth-child(1)>div:nth-child(2){
+        width:85%;
+        /* border:1px solid red; */
+        display: flex;
+        
+    }
+    #screen > div:nth-child(1)>div:nth-child(3){
+        width:10%;
+        /* border:1px solid red; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(1)  {
+       width:35%;
+       height:100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       /* border: 1px solid whitesmoke; */
+       
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(1) input {
+       width:100%;
+       height: 55%;
+       border-radius: 5px;
+       border: 1px solid grey;
+       outline: none;
+       padding-left: 36px;
+       background-color: black;
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(1) i {
+       color:grey;
+       position: relative;
+       left: 25px;
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(2) {
+       width:40%;
+       height:100%;
+       /* border: 2px solid green; */
+       margin-left: 20px;
+       /* display: flex;
+       color: black;
+       list-style: none;
+       justify-content: space-between; */
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(2) ul {
+      
+       display: flex;
+       color: white;
+       list-style: none;
+       justify-content: space-between;
+       margin-top: 22px;
+       font-size: 14px;
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(3)  {
+     width:20%;
+     margin-top: 22px;
+     margin-left: 25px; 
+     display: none;
+    }
+    @media screen and (max-width:770px){
+        #screen > div:nth-child(1)>div:nth-child(1){
+        width:50%;   
+        order:2;
+        
+    }
+    #screen > div:nth-child(1)>div:nth-child(2){
+        width:15%;
+        order: 1;
+        /* border:1px solid red; */
+        display: flex;
+        
+    }
+    #screen > div:nth-child(1)> div:nth-child(2)> div:nth-child(3)  {
+     
+     display: inline;
+    }
+    #screen > div:nth-child(1)>div:nth-child(3){
+        width:15%;
+        order:3;
+        
+    }
+        #screen > div:nth-child(1)>div:nth-child(1) img{
+            display: block;
+            margin: auto;
+        width: 50px;
+        order:2;
+    height: 47px;
+   
+    margin-top: 8px;
+    
+}
+
+    #screen > div:nth-child(1) >div:nth-child(2)>div:nth-child(1) {
+        display: none;
+    } 
+    #screen > div:nth-child(1) >div:nth-child(2)>div:nth-child(2) {
+        display: none;
+    } 
+    
+    #screen > div:nth-child(1)>div:nth-child(3)>i:nth-child(2){
+        display: none;
+    }
+    #screen > div:nth-child(1)>div:nth-child(3)>i:nth-child(3){
+        display: none;
+    }
+   
+    }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <div id="1">
+            <div id="A1">
+                <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_1280.png">
+            </div>
+
+            <div id="A2">
+             <div id="B1">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search or jump to...">
+             </div>
+             <div id="B2">
+                <ul>
+                    <li>Pull requests</li>
+                    <li>Issues</li>
+                    <li>Codespaces</li>
+                    <li>Market place</li>
+                    <li>Explore</li>
+                </ul>
+             </div>
+             <div id="B3">
+                <i class="fa-solid fa-bars fa-lg"></i>
+             </div>
+
+            </div>
+
+
+            <div id="A3">
+                <i class="fa-solid fa-bell fa-lg"></i>
+                <i class="fa-solid fa-plus fa-lg"></i>
+                <i class="fa-solid fa-user fa-lg"></i>
+                
+            </div>
+        </div>
+
+        <div>body</div>
+    </div>
+</body>
+</html>

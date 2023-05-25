@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single product</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #text {
+            font-size: 0.9rem;
+            margin: 23px;
+        }
+
+        .main {
+            width: 100%;
+            /* height:1700px; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left {
+            width: 55%;
+            height: 1710px;
+            /* border:1px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+
+        .left div {
+            width: 48%;
+            height: 560px;
+            margin: 5px;
+            overflow: hidden;
+        }
+        .left >div>img{
+            width:100%;
+            height:100%;
+        } 
+
+        .left img:hover{
+            transform: scale(1.05);
+            transition: all 0.2s ease-in-out;
+        }
+        .right {
+            width: 44%;
+            /* border: 1px solid red; */
+
+        }
+
+        .name {
+            width: 95%;
+            height: 120px;
+            border-bottom: 1px solid #d0cdcd;
+            margin-right: 10px;
+        }
+
+        .name p {
+            color: grey;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .name span {
+            border: 1px solid #eaeaec;
+            color: grey;
+            padding: 2px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .name span img {
+            height: 13px;
+            width: 13px;
+        }
+
+        .size {
+            width: 95%;
+            padding-bottom: 25px;
+            padding-top: 12px;
+            border-bottom: 1px solid #d0cdcd;
+        }
+
+        .size>span:nth-child(1) {
+            word-spacing: 5px;
+        }
+
+        .size>span:nth-child(1) b {
+            color: orange;
+            font-size: 1.15rem;
+        }
+
+        .size span:nth-child(1) strong {
+            font-size: 1.25rem;
+        }
+
+        .size p:nth-child(2) {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 8px;
+            color: #03a685;
+        }
+
+        .size>div:nth-child(3) {
+            width: 220px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            font-weight: bold;
+        }
+
+        .size div:nth-child(3) div:nth-child(1) {
+            font-size: 0.9rem;
+        }
+
+        .size div:nth-child(3) div:nth-child(2) {
+            font-size: 0.85rem;
+            color: #ff3e6c;
+            padding-top: 1px;
+        }
+
+        .size>div:nth-child(4) {
+            width: 273px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .size>div:nth-child(4)>div {
+            width: 18%;
+            height: 48px;
+            border: 1px solid #bfc0c6;
+            border-radius: 50%;
+            font-size: 0.83rem;
+            font-weight: bold;
+            /* padding-left: 17px;
+            padding-top: 12px; */
+            box-sizing: border-box;
+        }
+        .size>div:nth-child(4)>div:nth-child(1){
+            padding-left: 19px;
+            padding-top: 12px;
+        }
+        .size>div:nth-child(4)>div:nth-child(2){
+            padding-left: 19px;
+            padding-top: 12px;
+        }
+        .size>div:nth-child(4)>div:nth-child(3){
+            padding-left: 19px;
+            padding-top: 12px;
+        }
+        .size>div:nth-child(4)>div:nth-child(4){
+            padding-left: 17px;
+            padding-top: 12px;
+        }
+        .size>div:nth-child(4)>div:nth-child(5){
+            padding-left: 14px;
+            padding-top: 12px;
+        }
+        .size>div:nth-child(4)>div:hover {
+            border: 1px solid #ff3e6c;
+        }
+
+        .size>div:nth-child(5) {
+            margin-top: 30px;
+        }
+
+        .size>div:nth-child(5)>button:nth-child(1) {
+            width: 40%;
+            height: 52px;
+            border-radius: 5px;
+            background-color: #ff3e6c;
+            font-size: 0.9rem;
+            color: white;
+            border: none;
+            outline: none;
+        }
+
+        .size>div:nth-child(5)>button:nth-child(2) {
+            width: 32%;
+            height: 52px;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 0.9rem;
+            border: 1px solid #bfc0c6;
+
+        }
+
+        .size>div:nth-child(5)>button:nth-child(2):hover {
+            border: 1px solid black;
+
+        }
+
+        .options {
+            margin: 30px 0px;
+        }
+
+        .options b {
+            font-size: 1rem;
+        }
+
+        .options input {
+            height: 38px;
+            width: 40%;
+            padding-left: 20px;
+            margin-top: 17px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+            border: 1px solid #d0cdcd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .options span {
+            position: relative;
+            left: -68px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ff3e6c;
+        }
+
+        .options>p:nth-child(6) {
+            font-size: 0.83rem;
+            color: #282c3f;
+            margin-bottom: 25px;
+        }
+
+        .options>div:nth-child(7) p {
+            line-height: 30px;
+            color: #282c3f;
+
+        }
+
+        .offers {
+            border-bottom: 1px solid #d0cdcd;
+            width: 95%;
+            padding-bottom: 25px;
+
+        }
+
+        .offers>div:nth-child(1) {
+            font-size: 1rem;
+            margin-bottom: 15px;
+
+        }
+
+        .offers>div:nth-child(2)>b:nth-child(1) {
+            font-size: 1rem;
+
+        }
+
+        .offers>div:nth-child(2)>b:nth-child(2) {
+            font-size: 1rem;
+            color: orange;
+        }
+
+        .offers>div:nth-child(2)>ul {
+            margin-left: 17px;
+            margin-top: 7px;
+            font-size: 0.9rem;
+            line-height: 25px;
+            color: #282c3f;
+        }
+
+        .offers>div:nth-child(2)>p:nth-child(4),
+        p:nth-child(7),
+        p:nth-child(10) {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ff3e6c;
+            margin: 10px 0px;
+        }
+
+        .offers>div:nth-child(2)>p:nth-child(5),
+        p:nth-child(8) {
+            font-size: 1rem;
+        }
+
+        .products {
+            width: 95%;
+            margin-top: 25px;
+            border-bottom: 1px solid #d0cdcd;
+
+        }
+
+        .products>div:nth-child(1)>b:nth-child(1) {
+            font-size: 1rem;
+        }
+
+        .products>p:nth-child(2) {
+            margin: 13px 0px;
+            color: #282c3f
+        }
+
+        .products>div:nth-child(3)>p:nth-child(2) {
+            margin-top: 7px;
+            margin-bottom: 10px;
+            color: #282c3f
+        }
+
+        .products>div:nth-child(4)>p:nth-child(2) {
+            margin-top: 7px;
+            color: #282c3f
+        }
+
+        .products>div:nth-child(4)>p:nth-child(3) {
+            margin-bottom: 10px;
+            color: #282c3f
+        }
+
+        #flex {
+            width: 80%;
+            height: 245px;
+            /* border: 1px solid blue; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 13px;
+            box-sizing: border-box;
+        }
+
+        #flex>div {
+            width: 44%;
+            height: 23%;
+            border-bottom: 1px solid #ebe9e9;
+            margin-bottom: 10px;
+        }
+
+        #flex>div>p:nth-child(1) {
+            font-size: 0.75rem;
+            color: #282c3f
+        }
+
+        #flex>div>p:nth-child(2) {
+            font-size: 1rem;
+        }
+
+        .products>div:nth-child(5)>p:nth-child(3) {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ff3e6c;
+            margin: 28px 0px;
+        }
+         .ratings{
+            width:95%;
+           border-bottom:1px solid #ebe9e9;
+
+         }
+        .ratings>div:nth-child(1) {
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        .flex-rating {
+            width: 80%;
+            height: 96px;
+            /* border-bottom:1px solid green; */
+            display: flex;
+        }
+
+        .flex-rating>div:nth-child(1)>img:nth-child(2) {
+            width: 25px;
+            height: 25px;
+        }
+
+        .flex-rating>div:nth-child(1)>span:nth-child(1) {
+            font-size: 3rem;
+            margin-right: 7px;
+        }
+
+        .flex-rating>div:nth-child(1)>p:nth-child(3) {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #282c3f
+        }
+
+        .flex-rating>div:nth-child(2) {
+            width: 1px;
+            height: 115px;
+            margin-left: 32px;
+            margin-right: 40px;
+            background-color: rgb(239, 237, 237);
+        }
+
+        /* .flex-rating>div:nth-child(3){
+            display: flex;
+        } */
+        .flex-rating>div:nth-child(3)>div img {
+            width: 17px;
+            height: 17px;
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(1) {
+            display: flex;
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(2) {
+            display: flex;
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(3) {
+            display: flex;
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(4) {
+            display: flex;
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(5) {
+            display: flex;
+        }
+
+        .index {
+            height: 3px;
+            width: 150px;
+            margin: 10px 5px;
+            display: flex;
+        }
+
+        /* .flex-rating>div:nth-child(3)>div:nth-child(1)>div:nth-child(3){
+            height:3px;
+            width:150px;
+            margin:10px 5px;
+            display: flex;
+        } */
+        /* 1st line */
+        .flex-rating>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>div:nth-child(1) {
+            height: 4px;
+            width: 40%;
+            background-color: #03a685;
+
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(1)>div:nth-child(3)>div:nth-child(2) {
+            height: 4px;
+            width: 60%;
+            background-color: #ede7e7;
+        }
+
+        /* 2nd line */
+        .flex-rating>div:nth-child(3)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1) {
+            height: 4px;
+            width: 30%;
+            background-color: #03a685;
+
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2) {
+            height: 4px;
+            width: 70%;
+            background-color: #ede7e7;
+        }
+
+        /* 3rd line */
+        .flex-rating>div:nth-child(3)>div:nth-child(3)>div:nth-child(3)>div:nth-child(1) {
+            height: 4px;
+            width: 20%;
+            background-color: #03a685;
+
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(3)>div:nth-child(3)>div:nth-child(2) {
+            height: 4px;
+            width: 80%;
+            background-color: #ede7e7;
+        }
+
+        /* 4th line */
+        .flex-rating>div:nth-child(3)>div:nth-child(4)>div:nth-child(3)>div:nth-child(1) {
+            height: 4px;
+            width: 10%;
+            background-color: rgb(221, 159, 43);
+
+
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(4)>div:nth-child(3)>div:nth-child(2) {
+            height: 4px;
+            width: 90%;
+            background-color: #ede7e7;
+        }
+
+        /* 5th line */
+        .flex-rating>div:nth-child(3)>div:nth-child(5)>div:nth-child(3)>div:nth-child(1) {
+            height: 4px;
+            width: 20%;
+            background-color: rgb(186, 2, 2);
+
+        }
+
+        .flex-rating>div:nth-child(3)>div:nth-child(5)>div:nth-child(3)>div:nth-child(2) {
+            height: 4px;
+            width: 80%;
+            background-color: #ede7e7;
+        }
+
+        .font-color {
+            font-size: 0.85rem;
+            color: #282c3f;
+        }
+        .ratings >div:nth-child(3){
+            margin-top:42px ;
+            margin-bottom:10px 
+        }
+        .ratings >div:nth-child(3) >span{
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .fitting {
+            width: 43%;
+            height: 135px;
+        }
+        
+        .fitting>div:nth-child(2) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .fitting>div:nth-child(4) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+         /* 1st line */
+        .fitting>div:nth-child(2)>div:nth-child(1){
+            display: flex;
+            width: 59%;
+            margin-top: 10px;
+        }
+
+        .fitting>div:nth-child(2)>div:nth-child(1)>div:nth-child(1) {
+            height: 4px;
+            width: 77%;
+            background-color: #03a685;
+        }
+
+        .fitting>div:nth-child(2)>div:nth-child(1)>div:nth-child(2) {
+            height: 4px;
+            width: 23%;
+            background-color: #ede7e7;
+        }
+         /* 2nd line */
+        .fitting>div:nth-child(4)>div:nth-child(1){
+            display: flex;
+            width: 59%;
+            margin-top: 10px;
+        }
+
+        .fitting>div:nth-child(4)>div:nth-child(1)>div:nth-child(1) {
+            height: 4px;
+            width: 83%;
+            background-color: #03a685;
+        }
+
+        .fitting>div:nth-child(4)>div:nth-child(1)>div:nth-child(2) {
+            height: 4px;
+            width: 17%;
+            background-color: #ede7e7;
+        }
+
+        .fitting>p:nth-child(1),p:nth-child(3) {
+            font-size: 0.9rem;
+        }
+        
+
+        .fitting>div:nth-child(2)>p:nth-child(2) {
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .fitting>div:nth-child(4)>p:nth-child(2) {
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .fitting>p:nth-child(5){
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin: 10px 0px;
+        }
+        .customer> p:nth-child(1),p:nth-child(6){
+            margin: 15px 0;
+    font-size: 1rem;
+    font-weight: bold;  
+        }
+        .customer img{
+            width:75px;
+            height:75px;
+            margin-right: 5px;
+        }
+        .customer>div:nth-child(7){
+            width:85%;
+           border-bottom:1px solid #ebe9e9;
+            
+        }
+        .customer>div:nth-child(8){
+            width:85%;
+           border-bottom:1px solid #ebe9e9;
+            
+        }
+        .customer>div:nth-child(9){
+            width:85%;
+           border-bottom:1px solid #ebe9e9;
+            
+        }
+        .customer> div:nth-child(7)>p:nth-child(1){
+            font-size: 1rem;
+    color: #282c3f;
+    line-height: 20px;
+    margin-bottom: 15px;
+        }
+        .customer> div:nth-child(7)>p:nth-child(2){
+          margin-bottom: 10px;
+          font-size: 0.9rem;
+    color: #282c3f;
+        }
+        .customer> div:nth-child(8)>p:nth-child(1){
+            font-size: 1rem;
+    color: #282c3f;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+        }
+        .customer> div:nth-child(8)>p:nth-child(2){
+          margin-bottom: 10px;
+          font-size: 0.9rem;
+    color: #282c3f;
+        }
+        .customer> div:nth-child(9)>p:nth-child(1){
+            font-size: 1rem;
+    color: #282c3f;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+        }
+        .customer> div:nth-child(9)>p:nth-child(2){
+          margin-bottom: 10px;
+          font-size: 0.9rem;
+    color: #282c3f;
+        }
+        .customer>div:nth-child(10){
+            line-height: 35px;
+        }
+        .customer>div:nth-child(10)>p:nth-child(1){
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ff3e6c;
+        }
+        .customer>div:nth-child(10)>p:nth-child(2){
+            font-size: 1rem;
+            color: #282c3f;
+        }
+        .customer>div:nth-child(10)>p:nth-child(3){
+            font-size: 1rem;
+            color: #282c3f;
+        }
+        .customer>div:nth-child(10)>p:nth-child(3) >b{
+            color: #ff3e6c;
+        }
+        .customer>div:nth-child(10)>p:nth-child(4){
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text">
+        <p>Home/Clothing/Men Clothing/Tshirts/<b>Huetrap Tshirts>More By Huetrap</b></p>
+    </div>
+
+    <div class="main">
+        <div class="left">
+            <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg"></div>
+            <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/e47f6e3e-9c44-44b7-b134-314cdde804c11576102551371-2.jpg">
+            </div>
+            <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/6f3376d3-d5cd-4de4-8d04-66db80d5cef61576102551416-3.jpg">
+            </div>
+            <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg">
+            </div>
+            <div>
+                <img src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg">
+            </div>
+            
+
+        </div>
+        <div class="right">
+
+            <div class="name">
+                <h2>Huetrap</h2>
+                <p>Men Beige & Black Typography Printed Sustainable T-shirt</p>
+                <span>
+                    <b>4</b>
+                    <img src="./star.png" alt="">
+                    | 19.3K Ratings
+
+
+                </span>
+            </div>
+
+            <div class="size">
+
+                <span>
+                    <strong>&#8377;340 </strong>
+                    <span style="font-size: 1.05rem;color:grey">MRP
+                        <del>&#8377;1099</del>
+                    </span>
+                    <b>(69% OFF)</b>
+                </span>
+
+                <p>inclusive of all Taxes</p>
+
+                <div>
+                    <div>SELECT SIZE</div>
+                    <div>SIZE CHART></div>
+                </div>
+
+                <div>
+                    <div>S</div>
+                    <div>M</div>
+                    <div>L</div>
+                    <div>XL</div>
+                    <div>XXL</div>
+                </div>
+
+                <div>
+
+                    <button>
+                        <i class="fa-solid fa-bag-shopping fa-lg"></i>
+                        <b>&nbsp;&nbsp;ADD TO BAG</b>
+                    </button>
+
+
+                    <button>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                        <b>WISHLIST</b>
+                    </button>
+
+
+                </div>
+
+
+            </div>
+            <div class="options">
+                <b>DELIVERY OPTIONS&nbsp;</b>
+                <i class="fa-solid fa-truck"></i><br>
+                <input type="text" placeholder="Enter pincode">
+                <span>Check</span>
+                <p>Please enter PIN code to check delivery time & Pay on Delivery Availability</p>
+
+                <div>
+                    <p>100% Original Products</p>
+                    <p>Pay on delivery might be available</p>
+                    <p>Easy 14 days returns and exchanges</p>
+                    <p>Try & Buy might be available</p>
+                </div>
+            </div>
+            <div class="offers">
+                <div>
+                    <b>BEST OFFERS&nbsp;</b>
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+
+                <div>
+                    <b>Best Price:</b>
+                    <b>Rs.283</b>
+                    <ul>
+                        <li>Applicable on: Orders above Rs. 599 (only on first purchase)</li>
+                        <li>Coupon code: <b>MYNTRA100</b></li>
+                        <li>Coupon Discount: Rs. 57 off (check cart for final savings)</li>
+                    </ul>
+                    <p>View Eligible products</p>
+                    <p><b>Up To Rs 500 Cashback on CRED pay transactions.</b></p>
+                    <ul>
+                        <li>Min Spend Rs 1,000. Available only on Android Devices.</li>
+                    </ul>
+                    <p>Terms & Condition</p>
+                    <p><b>EMI option available</b></p>
+
+                    <ul>
+                        <li>EMI starting from Rs.16/month</li>
+                    </ul>
+                    <p>View Plan</p>
+
+
+                </div>
+
+            </div>
+            <div class="products">
+                <div>
+                    <b>PRODUCT DETAILS&nbsp;</b>
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <p>Beige and Black printed T-shirt, has a round neck, and short sleeves</p>
+
+                <div>
+                    <b>Size and Fit</b>
+                    <p>The model (height 6') is wearing a size M </p>
+                </div>
+
+                <div>
+                    <b>Material & Care</b>
+                    <p>Material: 52% Cotton 48% Polyester</p>
+                    <p>Machine Wash</p>
+                </div>
+
+                <div>
+                    <b>Specifications</b>
+                    <div id="flex">
+                        <div>
+                            <p>Fabric</p>
+                            <p>Cotton</p>
+
+                        </div>
+                        <div>
+                            <p>Fit</p>
+                            <p>Regular Fit</p>
+
+                        </div>
+                        <div>
+                            <p>Main Trend</p>
+                            <p>Typography or Slogan Print</p>
+
+                        </div>
+                        <div>
+                            <p>Neck</p>
+                            <p>Round Neck</p>
+
+                        </div>
+                        <div>
+                            <p>Fabric 2</p>
+                            <p>Polyester</p>
+
+                        </div>
+                        <div>
+                            <p>Length</p>
+                            <p>Regular</p>
+
+                        </div>
+                        <div>
+                            <p>Multipack Set</p>
+                            <p>Single</p>
+
+                        </div>
+                        <div>
+                            <p>Occasion</p>
+                            <p>Casual</p>
+
+                        </div>
+                    </div>
+                    <p>See more</p>
+
+                </div>
+            </div>
+            <div class="ratings">
+                <div>
+                    <b>RATINGS</b>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="flex-rating">
+                    <div>
+                        <span>4</span>
+                        <img src="./star.png" />
+                        <p>19.4k Verified Buyers</p>
+                    </div>
+                    <div></div>
+                    <!-- linings -->
+                    <div>
+                        <div>
+                            <p class="font-color">5</p>
+                            <img src="./STAR2.jpg" alt="">
+                            <div class="index">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <p class="font-color">9754</p>
+                        </div>
+                        <div>
+                            <p class="font-color">4</p>
+                            <img src="./STAR2.jpg" alt="">
+                            <div class="index">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <p class="font-color">4486</p>
+                        </div>
+                        <div>
+                            <p class="font-color">3</p>
+                            <img src="./STAR2.jpg" alt="">
+                            <div class="index">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <p class="font-color">2204</p>
+                        </div>
+                        <div>
+                            <p class="font-color">2</p>
+                            <img src="./STAR2.jpg" alt="">
+                            <div class="index">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <p class="font-color">1055</p>
+                        </div>
+                        <div>
+                            <p class="font-color">1</p>
+                            <img src="./STAR2.jpg" alt="">
+                            <div class="index">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <p class="font-color">1875</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <span>WHAT CUSTOMERS SAID</span>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="fitting">
+
+                    <p>Fit</p>
+                    <div>
+                        <div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p>Just Right(77%)</p>
+                    </div>
+
+                    <p>Length</p>
+                    <div>
+                        <div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <p>Just Right(83%)</p>
+                    </div>
+                    <p>View Details</p>
+
+                </div>
+            </div>
+            <div class="customer">
+                <p>Customer Photos(142)</p>
+                <img src="https://assets.myntassets.com/h_150,q_75,w_150,c_thumb,fl_progressive/assets/images/2023/5/13/bad90e20-18b1-4b9e-9755-1877f678294a1683975906414-IMG_20230513_150548.jpg">
+                <img src="https://assets.myntassets.com/h_150,q_75,w_150,c_thumb,fl_progressive/assets/images/2020/9/22/cba30ad6-e6ea-4a7e-90dd-77a8b48155271600756109965-IMG20200922115536.jpg">
+                <img src="https://assets.myntassets.com/h_150,q_75,w_150,c_thumb,fl_progressive/assets/images/2020/2/20/64b0f35e-3b13-41f5-b38e-f811ae57cfcb1582207360391-Snapchat-1443973849.jpg" >
+                <img src="https://assets.myntassets.com/h_150,q_75,w_150,c_thumb,fl_progressive/assets/images/2022/9/19/756566b2-bbf1-4064-bdf8-370d6bf28d3c1663595943523-IMG_20220919_192132.jpg" >
+                <p>Customer Reviews (1434)</p>
+                <div>
+                    <p>Great product for its price. Slightly loose from waste and sleeves but overall a good product. Also the colour is slightly different from the images. In reality the colour is lighter and cooler shade of grey. Nice for summers.</p>
+                    <p>Ashwani Kadyan&nbsp;|&nbsp;2 Mar 2022</p>
+                </div>
+                <div>
+                    <p>Although in this price the fabric quality is great and color looks good. You can use it for daily use purpose and it gives more attractive look when you are muscle pumped. According to me it'll not suit much for skinny or thin people. The black border part is meant to be a sensitive part as it can be faded if you used a brush hard on it while washing. So be careful of it while washing otherwise no color fade in the main fabric and it is good although 💪✌️✌️</p>
+                    <p>Ajay Bajpai &nbsp;|&nbsp;5 Mar 2022</p>
+                </div>
+                <div>
+                    <p>Alert guys!!! The product shown (beige melange) and the product which is received is different in color. It instead is more of white melange. Get ready with the color if you are trying to order one. Material wise it is soft and stretchable. Just the color</p>
+                    <p>Sanjay Chettri&nbsp;|&nbsp;10 Mar 2022</p>
+                </div>
+                <div>
+                    <p>View all 1434 reviews</p>
+                    <p>Product Code: <b>11148764</b></p>
+                    <p>Seller:&nbsp;<b>HUETRAP CLOTHING PRIVATE LIMITED</b></p>
+                    <p><b>View Supplier Information</b></p>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

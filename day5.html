@@ -9,11 +9,12 @@
     <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
-        font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
+
     #main {
         width: 100%;
         height: 1200px;
@@ -26,6 +27,7 @@
         border: 2px solid red;
         display: flex;
         justify-content: space-around;
+        box-sizing: border-box;
     }
 
     #icon {
@@ -43,14 +45,25 @@
 
     #search {
         width: 30%;
-        /* border:1px solid blue; */
         display: flex;
         align-items: center;
-        justify-content: center;
+        
+        position: relative;
     }
 
-    .searchIcon {
+    #search input {
+        height:40%;
+        width:80%;
+        padding-left: 20px;
+        
+        
+    }
+
+    #search i{
         margin-right: 10px;
+        position: absolute;
+        top:30px;
+        left:3px;
     }
 
     #profile {
@@ -89,11 +102,7 @@
         margin-right: 20px;
     }
 
-    input {
 
-        border: none;
-        outline: none;
-    }
 
     #bag {
         width: 30%;
@@ -124,6 +133,7 @@
         /* border: 1px solid red; */
 
     }
+
     #body>div:nth-child(1) h4 {
         margin-bottom: 10px;
 
@@ -136,54 +146,63 @@
         justify-content: space-around;
         flex-wrap: wrap;
         padding-top: 25px;
-    padding-left: 15px;
-}
-    
-    #leftSection{
+        padding-left: 15px;
+    }
+
+    #leftSection {
         margin-top: 20px;
     }
-   
-    #leftSection div:nth-child(1){
+
+    #leftSection div:nth-child(1) {
         margin-bottom: 15px;
         border-bottom: 1px solid #edebef;
     }
-    #leftSection div:nth-child(2){
+
+    #leftSection div:nth-child(2) {
         margin-bottom: 15px;
         border-bottom: 1px solid #edebef;
     }
-    #leftSection div h4{
+
+    #leftSection div h4 {
         margin-bottom: 10px;
         margin-left: 9px;
         font-size: 0.9rem;
     }
-    #leftSection div input,label{
+
+    #leftSection div input,
+    label {
         margin-bottom: 10px;
         margin-left: 10px;
     }
-    #rightSection> div{
-    width:18%;
-    height:370px;
+
+    #rightSection>div {
+        width: 18%;
+        height: 370px;
     }
-    #rightSection> div:hover{
-    border:1px solid grey;
+
+    #rightSection>div:hover {
+        border: 1px solid grey;
     }
-    #rightSection> div img{
-    width:100%;
-    height:75%;
-    /* margin: 26px 12px; */
+
+    #rightSection>div img {
+        width: 100%;
+        height: 75%;
+        /* margin: 26px 12px; */
     }
-    #rightSection> div> h4:nth-child(2){
-   margin-bottom: 2px;
-   
-    }
-    
-    #rightSection> div> p:nth-child(3){
-   margin-bottom: 5px;
-  
+
+    #rightSection>div>h4:nth-child(2) {
+        margin-bottom: 2px;
 
     }
-    #rightSection> div {
-   margin-bottom: 10px;
+
+    #rightSection>div>p:nth-child(3) {
+        margin-bottom: 5px;
+
+
+    }
+
+    #rightSection>div {
+        margin-bottom: 10px;
     }
 </style>
 
@@ -200,12 +219,12 @@
                 <div>Studio</div>
             </div>
             <div id="search">
-                <div class="searchIcon">
+                
                     <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div>
+                
+                
                     <input type="search" placeholder="Search here" />
-                </div>
+                
             </div>
             <div id="profile">
                 <div id="pp">
@@ -282,61 +301,71 @@
             </div>
             <div id="rightSection">
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>
                 </div>
                 <div>
-                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
                     <h4>Roadster</h4>
                     <p>Men Clothing</p>
                     <h4>Rs.399</h4>

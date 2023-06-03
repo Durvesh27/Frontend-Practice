@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra</title>
+    <script src="https://kit.fontawesome.com/8bf6937e0a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #main {
+        width: 100%;
+        /* height: 1200px; */
+        /* border: 2px solid black; */
+    }
+
+    #navbar {
+        width: 100%;
+        height: 80px;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+        z-index: 10;
+    }
+
+    #icon {
+        width: 5%;
+        /* border:1px solid blue; */
+        box-sizing: border-box;
+    }
+
+    #icon img {
+        width: 105px;
+        height: 60px;
+        margin-top: 15px;
+    }
+
+    #navi {
+        width: 35%;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+    }
+
+    .text {
+        position: absolute;
+        top: 28px;
+        right: 3px;
+        font-size: 10px;
+        font-weight: 645;
+        color: #ff3f6c;
+    }
+
+    #search {
+        width: 30%;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+    }
+
+    #search input {
+        height: 45%;
+        width: 100%;
+        padding-left: 43px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(243, 239, 239);
+
+    }
+
+    #search i {
+        margin-right: 10px;
+        position: absolute;
+        top: 33px;
+        left: 12px;
+    }
+
+    #profile {
+        width: 15%;
+        height: 80px;
+        /* border:1px solid blue; */
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+
+    }
+
+    #pp {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #pp i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+    #wishlist {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #wishlist i {
+        margin-top: 20px;
+        margin-left: 28px;
+        margin-right: 20px;
+    }
+
+
+
+    #bag {
+        width: 30%;
+        height: 80px;
+        /* border:1px solid red; */
+        margin-top: 10px;
+    }
+
+    #bag i {
+        margin-top: 20px;
+        margin-left: 25px;
+        margin-right: 20px;
+    }
+
+    /* body CSS */
+    #body {
+        width: 100%;
+        /* height: 800px; */
+        border: 1px solid #edebef;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    #body>div:nth-child(1) {
+        width: 16%;
+        /* border: 1px solid red; */
+
+    }
+
+    #body>div:nth-child(1) h4 {
+        margin-bottom: 10px;
+
+    }
+
+    #rightSection {
+        width: 84%;
+        border-left: 1px solid #edebef;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        /* padding-top: 25px;
+        padding-left: 15px; */
+        padding-top: 24px;
+    padding-left: 15px;
+    padding-right: 20px;
+    }
+
+    .top1 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        margin-left: 20px;
+    }
+
+    .top1 p:nth-child(1) {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .top1 p:nth-child(2) {
+        font-size: 16px;
+    }
+
+    .top2 {
+        display: flex;
+    }
+
+    .top2 p {
+        font-size: 16px;
+        font-weight: bold;
+        width: 26%;
+        padding-left: 27px;
+        box-sizing: border-box;
+    }
+
+    .top2 .drop {
+        width: 74%;
+        display: flex;
+    }
+
+    .top2 .drop div {
+        font-size: 14px;
+        margin-right: 20px;
+    }
+
+    .top2 .drop div select {
+        border: none;
+        outline: none;
+
+    }
+
+    .top2 .drop-option {
+        width: 30%;
+    }
+
+    .top2 .drop-option select {
+        margin: auto;
+        display: block;
+        width: 60%;
+        height: 35px;
+    }
+
+    #leftSection {
+        margin-top: 20px;
+    }
+
+    #leftSection div:nth-child(1) {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+
+    #leftSection div:nth-child(2){
+        margin-bottom: 15px;
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(4){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection div:nth-child(5){
+        padding: 15px 0 15px 20px;
+         border-bottom: 1px solid #edebef;
+    }
+    #leftSection .more{
+        font-size: 15px;
+    margin: 6px 0 15px 35px;
+    color: #ff3f6c;
+    }
+
+    #leftSection div h4 {
+        margin-bottom: 10px;
+        margin-left: 9px;
+        font-size: 14px;
+    }
+    #leftSection div input{
+        width:15px;
+        height:15px;
+        margin-right: 7px;
+    }
+    #leftSection div input,
+    label {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    #leftSection div label span{
+        font-size: 11px;
+        color:rgb(137, 136, 136)
+    }
+    #leftSection>div:nth-child(3){
+        padding-left: 20px;
+        border-bottom: 1px solid #edebef;
+
+    }
+    #leftSection .colour{
+        display: inline-block;
+        width:15px;
+        height:15px;
+        background-color: blue;
+        border-radius:50%;
+    }
+    #rightSection .main{
+        width: 18%;
+        height: 360px;
+        position: relative;
+        /* border: 1px solid blue; */
+        z-index: 1;
+        margin-bottom: 30px;
+    }
+
+    #rightSection .main:hover {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    #rightSection .main img {
+        width: 100%;
+        height: 75%;
+        /* margin: 26px 12px; */
+    }
+
+    #rightSection .box {
+        border: 1px solid #eaeaec;
+        background-color: hsla(0, 0%, 100%, .8);
+        color: black;
+        padding: 2px;
+        font-size: 12px;
+        position: absolute;
+        top: 240px;
+        left: 10px;
+        opacity: 0.8;
+        border-radius: 2px;
+    }
+
+    #rightSection .box>img {
+        height: 10px;
+        width: 12px;
+    }
+
+    #rightSection .secText {
+        margin-left: 10px;
+    }
+
+    #rightSection .secText strong {
+        font-size: 14px;
+    }
+
+    #rightSection .secText span {
+        font-size: 12px;
+        color: grey
+    }
+
+    #rightSection .secText b {
+        font-size: 12px;
+        color: rgb(255, 204, 110)
+    }
+
+    #rightSection .newSeason {
+        background: rgba(255, 63, 108, .8);
+        position: absolute;
+        top: 16px;
+        left: 0;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 0 4px;
+        line-height: 16px;
+    }
+
+    #rightSection .newSeason::after {
+        content: "";
+        position: absolute;
+        border-color: rgba(255, 63, 108, .5) transparent rgba(255, 63, 108, .5) rgba(255, 63, 108, .8);
+        border-style: solid;
+        border-width: 8px;
+        left: 100%;
+        width: 0;
+        height: 0;
+        top: 0;
+    }
+
+    .container {
+        /* border:1px solid red; */
+        height: 130px;
+        /* position: absolute;
+    top: 240px; */
+        width: 100%;
+        /* z-index: 10; */
+        background-color: white;
+        display: none;
+    }
+
+    #rightSection>div:hover {
+        .container {
+            display: block;
+            position: absolute;
+            top: 230px;
+            /* border: 1px solid red; */
+        }
+
+    }
+
+
+
+
+    .container button {
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 30px;
+        background: white;
+        border: 1px solid #c7c5c5;
+        border-radius: 2px;
+    }
+    .container button:hover{
+        border: 1px solid black;
+    }
+
+    .container p {
+        color: #8a8989;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 15.5px;
+        margin-bottom: 3px;
+    }
+
+    .container span:nth-child(3) {
+        margin-left: 10px;
+    }
+
+    #rightSection>div>h4:nth-child(2) {
+        /* margin-bottom: 2px; */
+        margin-left: 10px;
+    }
+
+    #rightSection>div>p:nth-child(3) {
+        margin-bottom: 3px;
+        font-size: 14px;
+        margin-left: 10px;
+        color: #535766;
+    }
+   #rightSection .downline{
+    width:98%;
+    height:1px;
+    background-color:#edebef ;
+   }
+   #rightSection .bottomFlex{
+    width: 100%;
+    display: flex;
+    margin: 50px 0;
+   }
+    .bottomFlex p{
+        width:33%;
+        font-size: 14px;
+       margin-top: 15px;
+    }
+    .bottomFlex .nextPage{
+        width:38%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        
+
+    }
+    .bottomFlex .nextPage li{
+        padding: 0 10px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .bottomFlex .nextPage li:nth-child(1){
+        background-color: black;
+        color: white;
+        height: 30px;
+        padding-top:8px;
+        
+    }
+    .bottomFlex .nextPage li:hover{
+        height: 30px;
+      border:1px solid rgb(158, 156, 156);  
+      padding-top:8px;
+    }
+    .bottomFlex .lastButton{
+        width:28%;
+        
+    }
+    .bottomFlex .lastButton button{
+        height: 45px;
+    width: 25%;
+    border: 1px solid #b9b5b5;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 40px;
+    }
+    .bottomFlex .lastButton button:hover{
+    border:1px solid black;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+        <div id="navbar">
+            <div id="icon">
+                <img src="./myntraLOGO.webp" alt="">
+            </div>
+            <div id="navi">
+                <div>Men</div>
+                <div>Women</div>
+                <div>Kids</div>
+                <div>Home & Living</div>
+                <div>Beauty</div>
+                <div>Studio</div>
+                <span class="text">NEW</span>
+
+            </div>
+            <div id="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input type="search" placeholder="Search for products,brands and more" />
+
+            </div>
+            <div id="profile">
+                <div id="pp">
+                    <i class="fa-solid fa-user "></i>
+                    <div style="margin-top: 3px;margin-left: 18px;">Profile</div>
+                </div>
+                <div id="wishlist">
+                    <i class="fa-solid fa-cart-shopping "></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Wishlist</div>
+                </div>
+                <div id="bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div style="margin-top: 3px;margin-left: 20px;">Bag</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="top1">
+            <p>Home/Clothing/<b>Men T-Shirts</b> </p>
+            <p><b>Men T-Shirts</b>-105493 items </p>
+        </div>
+        <div class="top2">
+            <p>FILTERS</p>
+            <div class="drop">
+                <div>
+                    <span>Bundles</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Country of Origin</span>
+                    <select></select>
+                </div>
+                <div>
+                    <span>Size</span>
+                    <select></select>
+                </div>
+
+            </div>
+            <div class="drop-option">
+                <select>
+                    <option>Recommended</option>
+                    <option>Whats new</option>
+                    <option>Popularity</option>
+                    <option>Discounts</option>
+                    <option>Price:High-to-low</option>
+                    <option>Price:Low-to-high</option>
+                </select>
+            </div>
+        </div>
+        <div id="body">
+            <div id="leftSection">
+
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <input type="checkbox" />
+                    <label>Tshirt<span>&nbsp;(102631)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Lounge T-shirts<span>&nbsp;(1221)</span></label><br />
+                    <!-- <input type="checkbox" />
+                    <label>Jeans</label><br />
+                    <input type="checkbox" />
+                    <label>Kurta</label><br />
+                    <input type="checkbox" />
+                    <label>Trousers</label><br />
+                    <input type="checkbox" />
+                    <label>Tshirt</label><br />
+                    <input type="checkbox" />
+                    <label>Kurtas</label> -->
+                </div>
+                <div>
+                    <h4>BRAND</h4>
+                    <input type="checkbox" />
+                    <label>Roadster<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Allen solly<span>&nbsp;(1012)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Nike<span>&nbsp;(2512)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Puma<span>&nbsp;(3201)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Adidas<span>&nbsp;(3254)</span></label><br />
+                    <input type="checkbox" />
+                    <label>Benetton<span>&nbsp;(5631)</span></label><br />
+                    <input type="checkbox" />
+                    <label>U.S Polo<span>&nbsp;(3242)</span></label><br/>
+                    <input type="checkbox" />
+                    <label>Tommy Hilfighter<span>&nbsp;(3214)</span></label>
+                    <p class="more">+630 more</p>
+                </div>
+                
+                <div>
+                    <h4>COLOUR</h4>
+                    <input type="checkbox" />
+                    <span class="colour"></span>
+                    <label>Blue<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:black"></span>
+                    <label>Black<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:red"></span>
+                    <label>Red<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:maroon"></span>
+                    <label>Maroon<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:purple"></span>
+                    <label>Purple<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:orange"></span>
+                    <label>Orange<span>&nbsp;(3312)</span></label><br />
+                    <input type="checkbox" />
+                    <span class="colour" style="background-color:greenyellow"></span>
+                    <label>green<span>&nbsp;(3312)</span></label>
+                    <p class="more">+39 more</p>
+                </div>
+
+                <div>
+                <h4>PRICE</h4>
+                <input type="checkbox"/>
+                <label>Rs. 124 to Rs. 9093<span>&nbsp;(103570)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 9093 to Rs. 18062<span>&nbsp;(496)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 18062 to Rs. 27031<span>&nbsp;(23)</span></label><br />
+                <input type="checkbox"/>
+                <label>Rs. 27031 to Rs. 36000<span>&nbsp;(1)</span></label><br />
+                </div>
+                <div>
+                <h4>DISCOUNT RANGE</h4>
+                <input type="radio"/>
+                <label>10% and above</label><br />
+                <input type="radio"/>
+                <label>20% and above</label><br />
+                <input type="radio"/>
+                <label>30% and above</label><br />
+                <input type="radio"/>
+                <label>40% and above</label><br />
+                <input type="radio"/>
+                <label>50% and above</label><br />
+                <input type="radio"/>
+                <label>60% and above</label><br />
+                <input type="radio"/>
+                <label>70% and above</label><br />
+                <input type="radio"/>
+                <label>80% and above</label><br />
+                </div>
+                
+
+            </div>
+            <div id="rightSection">
+                <div class="main">
+
+                    <img
+                        src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10398211/2019/11/25/7ab8bc06-f264-45e3-82bf-7c79f02812211574658986116-Roadster-Men-Shirts-8711574658983724-1.jpg" />
+                    <h4>Roadster</h4>
+                    <p>Men Clothing</p>
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 19.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                 
+                <div class="main">
+                    <a href="Myntra page1.html">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg"
+                        alt="">
+                </a>
+                    <h4>Huetrap</h4>
+                    <p>Typography print T-shirt</p>
+
+                    <span class="box">
+                        <b>3</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;649 </strong>
+                        <span>MRP
+                            <del>&#8377;1850</del>
+                        </span>
+                        <b>(77% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M,XL</p>
+                        <span class="secText">
+                            <strong>&#8377;649 </strong>
+                            <span>MRP
+                                <del>&#8377;1850</del>
+                            </span>
+                            <b>(77% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+            
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21936198/2023/2/23/c5bd261e-b2b9-4996-8736-7fd5d909dc5b1677135088695-Louis-Philippe-Sport-Men-Tshirts-5851677135088136-1.jpg"
+                        alt="">
+                    <h4>Louis Philippe</h4>
+                    <p>Sports Men T-Shirt</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 17.6k</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;589 </strong>
+                        <span>MRP
+                            <del>&#8377;1514</del>
+                        </span>
+                        <b>(49% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;589 </strong>
+                            <span>MRP
+                                <del>&#8377;1514</del>
+                            </span>
+                            <b>(49% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1700944/2019/6/8/488007ef-c65e-4a2f-a92b-65b6846894861559989274078-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg"
+                        alt="">
+                    <h4>HRX by Hrithik Roshan</h4>
+                    <p>Men Yellow Printed T-Shirt</p>
+
+                    <span class="box">
+                        <b>5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;749 </strong>
+                        <span>MRP
+                            <del>&#8377;1299</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: S,M</p>
+                        <span class="secText">
+                            <strong>&#8377;749 </strong>
+                            <span>MRP
+                                <del>&#8377;1299</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22879942/2023/4/25/92aba434-6d11-4456-aabf-3715df3664b31682367889514USPoloAssnMenBlackPoloCollarAppliqueT-shirt1.jpg"
+                        alt="">
+                    <h4>Polo Assn Men T-Shirt</h4>
+                    <p>Polo collar T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 19.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;550 </strong>
+                        <span>MRP
+                            <del>&#8377;998</del>
+                        </span>
+                        <b>(45% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M.XL</p>
+                        <span class="secText">
+                            <strong>&#8377;550 </strong>
+                            <span>MRP
+                                <del>&#8377;998</del>
+                            </span>
+                            <b>(45% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18176640/2023/5/18/efbd5632-a203-495b-9ab6-ebea9ef63b2b1684410440255-Tommy-Hilfiger-Men-Tshirts-6151684410439892-1.jpg"
+                        alt="">
+                    <h4>Tommy-Hilfiger</h4>
+                    <p>Mens T-Shirt</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 19.3k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;775 </strong>
+                        <span>MRP
+                            <del>&#8377;1254</del>
+                        </span>
+                        <b>(65% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M,XL,XXL</p>
+                        <span class="secText">
+                            <strong>&#8377;775 </strong>
+                            <span>MRP
+                                <del>&#8377;1254</del>
+                            </span>
+                            <b>(65% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1996770/2018/2/8/11518088823846-Roadster-Men-Rust-Solid-Henley-Neck-T-shirt-7631518088823602-1.jpg"
+                        alt="">
+                    <h4>Roadster</h4>
+                    <p>Henly Neck T-Shirt</p>
+
+                    <span class="box">
+                        <b>4.2</b>
+                        <img src="./star.png" alt="">
+                        <b>| 13.7k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;899 </strong>
+                        <span>MRP
+                            <del>&#8377;1300</del>
+                        </span>
+                        <b>(29% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;899 </strong>
+                            <span>MRP
+                                <del>&#8377;1300</del>
+                            </span>
+                            <b>(29% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21474638/2023/1/24/3a74185f-276d-48df-8e73-4270bdabbfe31674562975045-Louis-Philippe-Sport-Men-Tshirts-4131674562974519-1.jpg"
+                        alt="">
+                    <h4>Louis-Philippe</h4>
+                    <p>Men Clothing</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        <b>| 12.2k</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;1023 </strong>
+                        <span>MRP
+                            <del>&#8377;1450</del>
+                        </span>
+                        <b>(26% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;1023 </strong>
+                            <span>MRP
+                                <del>&#8377;1450</del>
+                            </span>
+                            <b>(26% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12377258/2020/9/11/ce1b7bcb-a65a-4eb0-a317-42ac02718f1e1599798741705UrbanoFashionPrintedMenRoundNeckDarkGreenT-Shirt1.jpg"
+                        alt="">
+                    <h4>Urban Fashion</h4>
+                    <p>Mens T-shirt</p>
+
+                    <span class="box">
+                        <b>7</b>
+                        <img src="./star.png" alt="">
+                        <b>| 10.9k</b>
+                    </span>
+                    <span class="secText">
+                        <strong>&#8377;389 </strong>
+                        <span>MRP
+                            <del>&#8377;749</del>
+                        </span>
+                        <b>(56% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;389 </strong>
+                            <span>MRP
+                                <del>&#8377;749</del>
+                            </span>
+                            <b>(56% OFF)</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22763126/2023/5/5/d7f27349-a195-4d1d-932c-73f42ff095c41683288884828-Peter-England-Casuals-Men-Striped-Slim-Fit-T-shirt-512168328-1.jpg" alt="">
+                    <h4>Peter-England-Casuals</h4>
+                    <p>Men-Striped-Slim-Fit-T-shirt</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 17.3k</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;699 </strong>
+                        <span>MRP
+                            <del>&#8377;999</del>
+                        </span>
+                        <b>(30% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: S,M</p>
+                        <span class="secText">
+                            <strong>&#8377;699 </strong>
+                            <span>MRP
+                                <del>&#8377;999</del>
+                            </span>
+                            <b>(30% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16878774/2022/2/4/98f122ad-aeb6-40f3-8f18-96751883c90d1643953479039-Louis-Philippe-Jeans-Men-Tshirts-1851643953478551-1.jpg"
+                        alt="">
+                    <h4>Louis Philippe T-Shirt</h4>
+                    <p>Mens Jeans T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;599 </strong>
+                        <span>MRP
+                            <del>&#8377;684</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20017870/2022/9/16/2f77bcde-0773-4d17-a62d-3d99f6c857511663311585777TheSouledStoreMenGreyPrintedRawEdgeLooseT-shirt1.jpg" alt="">
+                    <h4>The Soulted Store</h4>
+                    <p>Mens Oversized T-Shirt</p>
+
+                    <span class="box">
+                        <b>4.5</b>
+                        <img src="./star.png" alt="">
+                        <b>| 18.6K</b>
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;999 </strong>
+                        <span>MRP
+                            <del>&#8377;1263</del>
+                        </span>
+                        <b>(25% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;1325 </strong>
+                            <span>MRP
+                                <del>&#8377;1921</del>
+                            </span>
+                            <b>(25% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19182778/2022/11/30/8cb06057-fb75-47e4-bb9b-9045b67065171669788609173-US-Polo-Assn-Men-Tshirts-4581669788608713-1.jpg" alt="">
+                    <h4>US Polo Assn.</h4>
+                    <p>Mens T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;769 </strong>
+                        <span>MRP
+                            <del>&#8377;1299</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12504566/2021/2/15/061da36d-d662-4fe6-9b1d-5b7377e785f11613373061587-Roadster-Men-Tshirts-3551613373060033-1.jpg" alt="">
+                    <h4>Roadster</h4>
+                    <p>Mens regular T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;550 </strong>
+                        <span>MRP
+                            <del>&#8377;800</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/21086738/2022/12/14/12e313ff-4513-4289-b061-99aa4db317ea1670993138745-Calvin-Klein-Jeans-Men-Tshirts-6991670993138251-1.jpg" alt="">
+                    <h4>Calvin Klein Jeans</h4>
+                    <p>Mens Jeans T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;789 </strong>
+                        <span>MRP
+                            <del>&#8377;1399</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/8841173/2019/3/19/e73991be-bd0c-4dd3-8390-bb9c460d02311552986669941-Roadster-Men-Tshirts-2621552986668325-1.jpg" alt="">
+                    <h4>Roadster</h4>
+                    <p>Allowed Printed T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                   <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/2314372/2018/6/19/29e8ddfd-6f5f-43fd-8b71-dfa8ac6cef681529385860869-HRX-by-Hrithik-Roshan-Men-Charcoal-Grey-Slim-Advanced-Rapid--1.jpg" alt="">
+                    <h4>HRX by Hritik Roshan</h4>
+                    <p>Mens T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17605700/2023/2/17/90bf4f54-5da2-44ab-aadb-97de558ce0041676633122557-Difference-of-Opinion-Men-Blue-Conversational-Printed-Pure-C-1.jpg" alt="">
+                    <h4>Diffrence of Opinion</h4>
+                    <p>Cotton Oversized T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22109364/2023/4/3/14d69c78-aa04-4b8d-8fbc-6cce356356ad1680507539642-ESS-Logo--Regular-Fit-Mens-T-Shirt-8681680507539305-1.jpg" alt="">
+                    <h4>Puma</h4>
+                    <p>Mens Slim fit T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;987</strong>
+                        <span>MRP
+                            <del>&#8377;1365</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/19525576/2022/8/26/f8a1a635-9f80-4072-b413-c51e9480bb961661502396863-HereNow-Mens-Teal-Printed-Round-Neck-Pure-Cotton-T-Shirts-69-1.jpg" alt="">
+                    <h4>HERE&NOW</h4>
+                    <p>Mens T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;599 </strong>
+                        <span>MRP
+                            <del>&#8377;745</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13421560/2021/1/20/7a41f62b-c74c-4147-ba17-ed7c166bb8d01611146874086-Nike-Pro-Dri-FIT-Mens-Short-Sleeve-Top-251611146872984-1.jpg" alt="">
+                    <h4>Nike</h4>
+                    <p>Round Neck T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;1142 </strong>
+                        <span>MRP
+                            <del>&#8377;1874</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17125896/2022/2/11/edd2b407-1d73-46f9-9843-86cea050865f1644519785136SlimFitPatternedpoloshirt1.jpg" alt="">
+                    <h4>H&M</h4>
+                    <p>Slim fit pattern polo T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;887 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/10976182/2019/11/21/255ee3ca-200a-45cc-9f2e-7b2d5f55a1a71574331462513-Allen-Solly-Casual-Polo-Tshirt-5781574331461206-1.jpg" alt="">
+                    <h4>Allen Solly</h4>
+                    <p>Casual Polo T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                   
+                    <span class="secText">
+                        <strong>&#8377;340 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12940736/2021/11/12/751088bd-4b6f-4ce9-acb0-83ed3b2e1ee81636720869144-United-Colors-of-Benetton-Men-Navy-Blue-Solid-Polo-Collar-T--1.jpg" alt="">
+                    <h4>United Colors of Benetton</h4>
+                    <p>Solid Polo Collar T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    
+                    <span class="secText">
+                        <strong>&#8377;780 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(69% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="main">
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/22109382/2023/4/3/a1a78571-699c-4940-b534-1005e8133c591680507571629-ESS-Logo--Regular-Fit-Mens-T-Shirt-1871680507571187-1.jpg" alt="">
+                    <h4>Puma</h4>
+                    <p>Men Pure Cottom T-Shirt</p>
+
+                    <span class="box">
+                        <b>4</b>
+                        <img src="./star.png" alt="">
+                        | 19.3K
+                    </span>
+                    <p class="newSeason">NEW SEASON</p>
+                    <span class="secText">
+                        <strong>&#8377;549 </strong>
+                        <span>MRP
+                            <del>&#8377;1099</del>
+                        </span>
+                        <b>(50% OFF)</b>
+                    </span>
+
+
+                    <div class="container">
+                        <button>
+                            WISHLIST
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <p>Sizes: M</p>
+                        <span class="secText">
+                            <strong>&#8377;340 </strong>
+                            <span>MRP
+                                <del>&#8377;1099</del>
+                            </span>
+                            <b>(69% OFF)</b>
+                        </span>
+                    </div>
+
+                </div>
+                
+                <div class="downline"></div>
+                <div class="bottomFlex">
+                <p>Page 1 of 1831</p>
+                <ul class="nextPage">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+                <div class="lastButton">
+                    <button>
+                        NEXT >
+                    </button>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+</body>
+
+</html>
